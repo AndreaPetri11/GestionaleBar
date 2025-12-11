@@ -1,10 +1,8 @@
 .containerTablePage {
   display: flex;
   flex-direction: row;
-  /*flex-wrap: wrap;*/
   align-items: stretch;
   gap: 5px;
-  row-gap: 10px;
   margin: 15px;
   height: 98vh;
 }
@@ -38,6 +36,7 @@
 .productsSection::-webkit-scrollbar {
   display: none;
 }
+
 .productList {
   list-style: none;
   padding: 5px;
@@ -50,18 +49,17 @@
 }
 
 li {
-  width: 100%;
-  height: 100%;
-  border: solid 2px blue;
+  border: 2px solid blue;
   border-radius: 20px;
-  justify-content: flex;
-  align-items: center;
-  justify-content: center;
   padding: 9px;
-  width: auto;
   font-size: 4vh;
   cursor: pointer;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .tableSection {
   border: 2px solid purple;
   border-radius: 15px;
@@ -69,22 +67,36 @@ li {
   height: 95vh;
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  overflow: hidden;
 }
+
 .selectedTable {
   display: flex;
   justify-content: flex-start;
-  width: 100vh;
-  flex-wrap: wrap;
-  overflow-y: auto;
-  scrollbar-width: none;
+  width: 100%;
+  padding: 10px;
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid black;
 }
+
+.tableProductsWrapper {
+  overflow-y: auto;
+  flex: 1;
+}
+
 .descriptionTable {
   display: flex;
   flex-direction: row;
   width: 100%;
   font-weight: bold;
-  margin-bottom: 10px;
+  padding: 10px;
+  background: white;
+  position: sticky;
+  z-index: 15;
+  border-bottom: 1px solid black;
 }
 
 .col-product {
@@ -92,20 +104,24 @@ li {
 }
 
 .col-qty {
-  flex: 3 0 60px;
+  flex: 1.5;
   text-align: center;
 }
 
 .col-price {
   width: 80px;
   text-align: right;
+  margin-right: 10px;
 }
 
 .tableTotal {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  margin-top: 20px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  border-top: 1px solid black;
 }
 
 .addedProducts {
@@ -113,6 +129,7 @@ li {
   flex-direction: row;
   width: 100%;
   padding: 5px 0;
+  padding-left: 10px;
   border-bottom: 1px solid black;
 }
 
@@ -126,11 +143,9 @@ li {
   cursor: pointer;
   margin: 0 6px;
   transition: all 0.2s ease;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   background: purple;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
   color: white;

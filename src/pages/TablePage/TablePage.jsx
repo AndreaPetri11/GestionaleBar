@@ -67,6 +67,8 @@ export default function TablePage() {
         onDecrease={decreaseQty}
         total={total}
         setTableProducts={setTableProducts} // per editare note prodotti
+        onTableClick={() => setEditingTableNotes(true)}
+        tableNotes={tableNotes}
       />
 
       {/* Modali: prodotto personalizzato e note tavolo */}
