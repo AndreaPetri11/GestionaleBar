@@ -2,6 +2,7 @@
 
 import EditNotes from "../EditNotes/EditNotes";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function TableProductsList({
   tableId,
@@ -14,7 +15,7 @@ export default function TableProductsList({
   tableNotes,
 }) {
   const [editingProduct, setEditingProduct] = useState(null);
-
+  const navigate = useNavigate();
   // Aggiorna le note di un prodotto
   const handleSaveNotes = (updatedProduct) => {
     setTableProducts((prev) =>
@@ -25,13 +26,19 @@ export default function TableProductsList({
   return (
     <section className="tableSection">
       {/* Titolo tavolo sempre visibile */}
-      <h1
-        className="selectedTable"
-        onClick={onTableClick}
-        style={{ cursor: "pointer" }}
-      >
-        Tavolo {tableId} {tableNotes && `(${tableNotes})`}
-      </h1>
+
+      <button className="goBack" onClick={() => navigate("/")}>
+        X
+      </button>
+      <div className="containerTitleTable">
+        <h1
+          className="selectedTable"
+          onClick={onTableClick}
+          style={{ cursor: "pointer" }}
+        >
+          Tavolo {tableId} {tableNotes && `(${tableNotes})`}
+        </h1>
+      </div>
 
       {/* Wrapper scrollabile per lista prodotti */}
       <div className="tableProductsWrapper">
@@ -84,6 +91,18 @@ export default function TableProductsList({
 
       {/* Totale conto */}
       <div className="tableTotal">
+        <button className="trash">Libera tavolo</button>
+        <button
+          className="save"
+          onClick={() =>
+            localStorage.setItem(
+              `tavolo-${tableId}`,
+              JSON.stringify(tableProducts)
+            )
+          }
+        >
+          Salva
+        </button>
         <h4>Totale conto:</h4>
         <p>{total.toFixed(2)}€</p>
       </div>

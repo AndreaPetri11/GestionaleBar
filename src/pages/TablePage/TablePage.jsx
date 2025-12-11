@@ -1,7 +1,7 @@
 // src/pages/TablePage/TablePage.jsx
 
 import { useParams } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./TablePage.css";
 
 import CategorySection from "../../components/CategorySection/CategorySection";
@@ -14,10 +14,8 @@ import products from "../../data/products";
 
 export default function TablePage() {
   const { id } = useParams();
-
   const [selectedProducts, setSelectedProducts] = useState([]);
   const [showCustomForm, setShowCustomForm] = useState(false);
-
   const [tableNotes, setTableNotes] = useState("");
   const [editingTableNotes, setEditingTableNotes] = useState(false);
 

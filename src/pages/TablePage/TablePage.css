@@ -68,18 +68,32 @@ li {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  position: relative;
+}
+.goBack {
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  z-index: 20;
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  color: white;
+  border-radius: 20%;
+  margin: 5px;
 }
 
 .selectedTable {
-  display: flex;
-  justify-content: flex-start;
-  width: 100%;
   padding: 10px;
   background: white;
   position: sticky;
   top: 0;
-  z-index: 20;
+  display: inline;
+}
+.containerTitleTable {
   border-bottom: 1px solid black;
+  padding: 10px;
 }
 
 .tableProductsWrapper {
