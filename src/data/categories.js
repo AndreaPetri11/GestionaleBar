@@ -1,3 +1,4 @@
+//src\data
 const categories = [
   { id: "AB", categoryName: "Acqua e Bibite" },
   { id: "F", categoryName: "Food" },

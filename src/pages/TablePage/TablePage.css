@@ -60,6 +60,7 @@ li {
   padding: 9px;
   width: auto;
   font-size: 4vh;
+  cursor: pointer;
 }
 .tableSection {
   border: 2px solid purple;
@@ -113,4 +114,44 @@ li {
   width: 100%;
   padding: 5px 0;
   border-bottom: 1px solid black;
+}
+
+.qty-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0 6px;
+  transition: all 0.2s ease;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: purple;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+  color: white;
+}
+
+.qty-btn:hover {
+  background: rgb(213, 147, 213);
+  transform: scale(1.1);
+  color: purple;
+}
+
+.qty-btn:active {
+  transform: scale(0.95);
+  background: #dcdce0;
+}
+
+.col-qty {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 600;
 }

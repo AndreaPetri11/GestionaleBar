@@ -1,3 +1,5 @@
+//src\data\products.js
+
 const products = [
   { id: 1, productName: "Tedesco", category: "Food", price: 9.0 },
   { id: 2, productName: "Croccante", category: "Food", price: 9.0 },
@@ -351,7 +353,12 @@ const products = [
     category: "Amari e Distillati",
     price: 5.0,
   },
-  { id: 121, productName: "Averna", category: "AmariDistillati", price: 5.0 },
+  {
+    id: 121,
+    productName: "Averna",
+    category: "Amari e Distillati",
+    price: 5.0,
+  },
   {
     id: 122,
     productName: "Ramazzotti",
@@ -462,6 +469,13 @@ const products = [
     productName: "Pampero Anniversario",
     category: "Amari e Distillati",
     price: 9.0,
+  },
+
+  {
+    id: "custom",
+    productName: "Prodotto personalizzato",
+    price: 0,
+    category: "Altro",
   },
 ];
 

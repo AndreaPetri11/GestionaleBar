@@ -1,3 +1,5 @@
+//src\App.jsx
+
 import "./App.css";
 import Table from "./components/Table/Table";
 import tables from "./data/tables";

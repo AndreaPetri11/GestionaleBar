@@ -1,3 +1,5 @@
+//src\data\tables.js
+
 const tables = [
   { id: "1 A" },
   { id: "1 B" },

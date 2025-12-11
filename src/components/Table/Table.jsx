@@ -1,3 +1,5 @@
+//src\components\Table\Table.jsx
+
 import "./Table.css";
 
 export default function Table({ id, onClick }) {
