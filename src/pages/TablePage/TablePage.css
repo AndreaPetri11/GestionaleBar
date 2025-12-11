@@ -1,0 +1,72 @@
+.containerTablePage {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 5px;
+  row-gap: 10px;
+  margin: 15px;
+  height: 100vh;
+}
+
+.categorySection {
+  border: 2px solid black;
+  border-radius: 15px;
+  width: 14%;
+  height: 98vh;
+  min-width: 100px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 12px;
+  gap: 10px;
+  overflow-y: auto;
+}
+
+.productsSection {
+  border: 2px solid blue;
+  border-radius: 15px;
+  width: 49%;
+  height: 98vh;
+  min-width: 100px;
+  padding: 10px;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+.productsSection::-webkit-scrollbar {
+  display: none;
+}
+.productList {
+  list-style: none;
+  padding: 5px;
+  margin: 5px;
+  display: flex;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  gap: 15px;
+  width: auto;
+}
+
+li {
+  width: 100%;
+  height: 100%;
+  border: solid 2px black;
+  border-radius: 20px;
+  justify-content: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px;
+  width: auto;
+  font-size: 4vh;
+}
+.tableSection {
+  border: 2px solid green;
+  border-radius: 15px;
+  width: 36%;
+  height: 98vh;
+  min-width: 100px;
+  display: flex;
+  padding: 10px;
+}
