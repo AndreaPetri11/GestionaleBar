@@ -1,12 +1,23 @@
 //src\components\TableProductsList\TableProductsList.jsx
 
+import EditNotes from "../EditNotes/EditNotes";
+import { useState } from "react";
+
 export default function TableProductsList({
   tableId,
   tableProducts,
   onIncrease,
   onDecrease,
   total,
+  setTableProducts,
 }) {
+  const [editingProduct, setEditingProduct] = useState(null);
+
+  const handleSaveNotes = (updatedProduct) => {
+    setTableProducts((prev) =>
+      prev.map((p) => (p.id === updatedProduct.id ? updatedProduct : p))
+    );
+  };
   return (
     <section className="tableSection">
       <h1 className="selectedTable">Tavolo {tableId}</h1>
@@ -21,7 +32,13 @@ export default function TableProductsList({
         {tableProducts.length > 0 ? (
           tableProducts.map((item) => (
             <div key={item.id} className="addedProducts">
-              <span className="col-product">{item.productName}</span>
+              <span
+                className="col-product"
+                onClick={() => setEditingProduct(item)}
+                style={{ cursor: "pointer" }}
+              >
+                {item.productName} {item.notes && `(${item.notes})`}
+              </span>
 
               <span className="col-qty">
                 <button className="qty-btn" onClick={() => onDecrease(item.id)}>
@@ -49,6 +66,14 @@ export default function TableProductsList({
         <h4>Totale conto:</h4>
         <p>{total.toFixed(2)}€</p>
       </div>
+
+      {editingProduct && (
+        <EditNotes
+          product={editingProduct}
+          onSave={handleSaveNotes}
+          onClose={() => setEditingProduct(null)}
+        />
+      )}
     </section>
   );
 }

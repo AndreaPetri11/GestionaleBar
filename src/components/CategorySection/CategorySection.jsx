@@ -1,6 +1,6 @@
 //src\components\CategorySection\CategorySection.jsx
 import categories from "../../data/categories";
-import CategoryLabel from "../categoriesLabel/CategoryLabel";
+import CategoryLabel from "../CategoryLabel/CategoryLabel";
 
 export default function CategorySection({ onCategorySelect }) {
   return (
