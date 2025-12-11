@@ -7,3 +7,16 @@
   align-items: center;
   font-size: 12px;
 }
+
+.table:hover {
+  background: purple;
+  transform: scale(0.95);
+  color: white;
+  border: purple;
+}
+.table:active {
+  background: purple;
+  transform: scale(0.75);
+  color: white;
+  border: none;
+}
