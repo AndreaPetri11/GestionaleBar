@@ -1,5 +1,7 @@
 //src\components\Buttons\increase_decrease_qnty\IncreaseDecrease.jsx
 
+import "../IncreaseDecrease.css";
+
 export const handleIncreaseQty = (id, setTableProducts) => {
   setTableProducts((prev) =>
     prev.map((p) => (p.id === id ? { ...p, qty: p.qty + 1 } : p))

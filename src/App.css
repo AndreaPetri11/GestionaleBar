@@ -1,21 +1,25 @@
 /*src\App.css*/
 
-.containerTables {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  row-gap: 10px;
-  flex-wrap: wrap;
-  margin-top: 20px;
-}
-
 .mainLayout {
   display: flex;
   width: 100%;
+  gap: 20px;
+  padding: 20px;
 }
 
-.tableSidePanel {
-  flex: 1;
-  border-left: 2px solid #ddd;
+.containerTables {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 70%;
+}
+
+.tablePreview {
+  flex-basis: 30%;
+  border: 2px solid purple;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 10px;
 }

@@ -19,7 +19,7 @@ export default function TableState({ prodotti }) {
         cursor: "pointer",
         background:
           finalState === "Libero"
-            ? "#b2ffb2"
+            ? "#ffffffff"
             : finalState === "Occupato"
             ? "#ffb2b2"
             : "#b2d1ff",

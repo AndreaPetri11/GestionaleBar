@@ -2,75 +2,32 @@
 
 .containerTablePage {
   display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  gap: 5px;
-  margin: 15px;
-  height: 98vh;
+  gap: 0.5rem;
+  padding: 1rem;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .categorySection {
+  flex-basis: 200px;
+  flex-shrink: 0;
   border: 2px solid rgb(14, 194, 17);
-  border-radius: 15px;
-  width: 14%;
-  height: 95vh;
-  min-width: 100px;
-  padding: 10px;
+  border-radius: 12px;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  font-size: 12px;
-  gap: 10px;
+  gap: 0.5rem;
+  padding: 0.5rem;
   overflow-y: auto;
-  scrollbar-width: none;
-}
-
-.productsSection {
-  border: 2px solid blue;
-  border-radius: 15px;
-  width: 49%;
-  height: 95vh;
-  padding: 10px;
-  overflow-y: auto;
-  scrollbar-width: none;
-}
-.productsSection::-webkit-scrollbar {
-  display: none;
-}
-
-.productList {
-  list-style: none;
-  padding: 5px;
-  margin: 5px;
-  display: flex;
-  align-content: flex-start;
-  flex-wrap: wrap;
-  gap: 15px;
-  width: auto;
-}
-
-li {
-  border: 2px solid blue;
-  border-radius: 20px;
-  padding: 9px;
-  font-size: 4vh;
-  cursor: pointer;
-  width: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .tableSection {
+  flex-basis: 350px;
+  flex-shrink: 0;
   border: 2px solid purple;
-  border-radius: 15px;
-  width: 36%;
-  height: 95vh;
+  border-radius: 12px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  position: relative;
 }
 .goBack {
   position: absolute;
@@ -113,14 +70,13 @@ li {
 
 .descriptionTable {
   display: flex;
-  flex-direction: row;
-  width: 100%;
   font-weight: bold;
-  padding: 10px;
+  padding: 0.5rem 1rem;
   background: white;
   position: sticky;
-  z-index: 15;
+  top: 0;
   border-bottom: 1px solid black;
+  z-index: 10;
 }
 
 .col-product {
@@ -135,7 +91,7 @@ li {
 .col-price {
   width: 80px;
   text-align: right;
-  margin-right: 10px;
+  padding-right: 10px;
 }
 
 .tableTotal {
@@ -193,17 +149,4 @@ li {
   justify-content: center;
   font-size: 18px;
   font-weight: 600;
-}
-
-li:hover {
-  background: blue;
-  transform: scale(1.1);
-  color: white;
-}
-
-li:active {
-  transform: scale(0.75);
-  background: white;
-  color: purple;
-  border-color: purple;
 }

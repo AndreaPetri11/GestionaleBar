@@ -1,7 +1,7 @@
 // src\pages\TablePage\TablePage.jsx
 
-import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 import "./TablePage.css";
 
 import CategorySection from "../../components/CategorySection/CategorySection";
@@ -11,30 +11,44 @@ import CustomProduct from "../../components/CustomProduct/CustomProduct";
 import EditNotes from "../../components/EditNotes/EditNotes";
 import useTableProducts from "../../hooks/useTableProducts";
 import products from "../../data/products";
+import tablesData from "../../data/tables";
 
 export default function TablePage() {
   const { id } = useParams();
-  const [selectedProducts, setSelectedProducts] = useState([]);
-  const [showCustomForm, setShowCustomForm] = useState(false);
-  const [tableNotes, setTableNotes] = useState("");
-  const [editingTableNotes, setEditingTableNotes] = useState(false);
+  const navigate = useNavigate();
 
   const {
-    tableProducts,
+    tablesState,
     addProduct,
     increaseQty,
     decreaseQty,
-    total,
-    setTableProducts,
-  } = useTableProducts();
+    setTableNotes,
+    getTotal,
+    loadAllTables,
+    saveTable,
+  } = useTableProducts(
+    tablesData.map((t) => ({ id: t.id, products: [], notes: "" }))
+  );
 
-  // Filtra prodotti per categoria
+  const [selectedProducts, setSelectedProducts] = useState([]);
+  const [showCustomForm, setShowCustomForm] = useState(false);
+  const [editingTableNotes, setEditingTableNotes] = useState(false);
+
+  // Carica dati dal localStorage
+  useEffect(() => {
+    loadAllTables();
+  }, []);
+
+  const currentTable = tablesState.find((t) => t.id === id) || {
+    products: [],
+    notes: "",
+  };
+
   const handleCategorySelect = (categoryName) => {
     const filtered = products.filter((p) => p.category === categoryName);
     setSelectedProducts(filtered);
   };
 
-  // Aggiunge prodotto al tavolo o apre il form per prodotto personalizzato
   const handleAddProduct = (product) => {
     if (!product) return;
 
@@ -43,7 +57,7 @@ export default function TablePage() {
       return;
     }
 
-    addProduct(product);
+    addProduct(id, product);
   };
 
   return (
@@ -60,35 +74,49 @@ export default function TablePage() {
       {/* Lista prodotti del tavolo */}
       <TableProductsList
         tableId={id}
-        tableProducts={tableProducts}
-        onIncrease={increaseQty}
-        onDecrease={decreaseQty}
-        total={total}
-        setTableProducts={setTableProducts} // per editare note prodotti
+        tableProducts={currentTable.products}
+        onIncrease={(pid) => increaseQty(id, pid)}
+        onDecrease={(pid) => decreaseQty(id, pid)}
+        total={getTotal(id)}
+        setTableProducts={(newProducts) => {
+          const tIndex = tablesState.findIndex((t) => t.id === id);
+          if (tIndex !== -1) {
+            tablesState[tIndex].products = newProducts;
+            saveTable(id);
+          }
+        }}
+        tableNotes={currentTable.notes}
         onTableClick={() => setEditingTableNotes(true)}
-        tableNotes={tableNotes}
+        goToFullPage={() => {}}
+        setTableNotes={setTableNotes}
       />
 
-      {/* Modali: prodotto personalizzato e note tavolo */}
-      <>
-        {showCustomForm && (
-          <CustomProduct
-            onClose={() => setShowCustomForm(false)}
-            onAdd={(p) => {
-              addProduct(p);
-              setShowCustomForm(false);
-            }}
-          />
-        )}
+      {/* Modali */}
+      {showCustomForm && (
+        <CustomProduct
+          onClose={() => setShowCustomForm(false)}
+          onAdd={(p) => {
+            addProduct(id, p);
+            setShowCustomForm(false);
+          }}
+        />
+      )}
 
-        {editingTableNotes && (
-          <EditNotes
-            product={{ productName: "Tavolo", notes: tableNotes }}
-            onSave={(updated) => setTableNotes(updated.notes)}
-            onClose={() => setEditingTableNotes(false)}
-          />
-        )}
-      </>
+      {editingTableNotes && (
+        <EditNotes
+          product={{ productName: "Tavolo", notes: currentTable.notes }}
+          onSave={(updated) => setTableNotes(id, updated.notes)}
+          onClose={() => setEditingTableNotes(false)}
+        />
+      )}
+
+      <button
+        className="goBack"
+        onClick={() => navigate("/")}
+        style={{ position: "absolute", top: 5, right: 5 }}
+      >
+        Torna
+      </button>
     </main>
   );
 }

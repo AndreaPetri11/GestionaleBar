@@ -1,33 +1,49 @@
-// src\components\TableProductsList\TableProductsList.jsx
+//src\components\TableProductsList\TableProductsList.jsx
 
 import EditNotes from "../EditNotes/EditNotes";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./TableProductsList.css";
 
 export default function TableProductsList({
   tableId,
-  tableProducts,
+  tableProducts = [],
   onIncrease,
   onDecrease,
-  total,
+  total = 0,
   setTableProducts,
   onTableClick,
-  tableNotes,
+  tableNotes = "",
   goToFullPage,
+  setTableNotes, // necessario per liberare tavolo e reset note
 }) {
   const [editingProduct, setEditingProduct] = useState(null);
   const navigate = useNavigate();
-  // Aggiorna le note di un prodotto
+
   const handleSaveNotes = (updatedProduct) => {
-    setTableProducts((prev) =>
-      prev.map((p) => (p.id === updatedProduct.id ? updatedProduct : p))
+    setTableProducts(
+      tableProducts.map((p) =>
+        p.id === updatedProduct.id ? updatedProduct : p
+      )
     );
+  };
+
+  const handleClearTable = () => {
+    setTableProducts([]);
+    if (setTableNotes) setTableNotes(tableId, "");
+    localStorage.removeItem(`table-${tableId}`);
+  };
+
+  const handleSaveAndGoBack = () => {
+    localStorage.setItem(
+      `table-${tableId}`,
+      JSON.stringify({ products: tableProducts, notes: tableNotes })
+    );
+    navigate("/"); // torna alla pagina principale con tavoli
   };
 
   return (
     <section className="tableSection">
-      {/* Titolo tavolo sempre visibile */}
-
       <button className="goBack" onClick={() => navigate("/")}>
         X
       </button>
@@ -41,16 +57,13 @@ export default function TableProductsList({
         </h1>
       </div>
 
-      {/* Wrapper scrollabile per lista prodotti */}
       <div className="tableProductsWrapper">
-        {/* Intestazioni colonne sticky */}
         <div className="descriptionTable">
           <h3 className="col-product">Prodotti</h3>
           <h3 className="col-qty">Quantità</h3>
           <h3 className="col-price">Prezzo</h3>
         </div>
 
-        {/* Lista prodotti */}
         <div className="tableProductsList">
           {tableProducts.length > 0 ? (
             tableProducts.map((item) => (
@@ -90,22 +103,16 @@ export default function TableProductsList({
         </div>
       </div>
 
-      {/* Totale conto */}
       <div className="tableTotal">
-        <button className="trash">Libera tavolo</button>
-        <button
-          className="save"
-          onClick={() =>
-            localStorage.setItem(
-              `tavolo-${tableId}`,
-              JSON.stringify(tableProducts)
-            )
-          }
-        >
+        <button className="table-action-btn trash" onClick={handleClearTable}>
+          Libera tavolo
+        </button>
+
+        <button className="table-action-btn save" onClick={handleSaveAndGoBack}>
           Salva
         </button>
 
-        <button className="edit" onClick={goToFullPage}>
+        <button className="table-action-btn edit" onClick={goToFullPage}>
           Modifica
         </button>
 
@@ -113,7 +120,6 @@ export default function TableProductsList({
         <p>{total.toFixed(2)}€</p>
       </div>
 
-      {/* Form per modificare note prodotto */}
       {editingProduct && (
         <EditNotes
           product={editingProduct}

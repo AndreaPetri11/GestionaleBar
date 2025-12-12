@@ -1,5 +1,7 @@
 //src\components\ProductsSection\ProductsSection.jsx
 
+import "./ProductsSection.css";
+
 export default function ProductsSection({ products, onAddProduct }) {
   return (
     <section className="productsSection">
