@@ -115,7 +115,7 @@ export default function TablePage() {
         onClick={() => navigate("/")}
         style={{ position: "absolute", top: 5, right: 5 }}
       >
-        Torna
+        X
       </button>
     </main>
   );

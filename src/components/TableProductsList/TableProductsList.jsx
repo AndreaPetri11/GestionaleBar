@@ -1,5 +1,4 @@
 //src\components\TableProductsList\TableProductsList.jsx
-
 import EditNotes from "../EditNotes/EditNotes";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -44,9 +43,6 @@ export default function TableProductsList({
 
   return (
     <section className="tableSection">
-      <button className="goBack" onClick={() => navigate("/")}>
-        X
-      </button>
       <div className="containerTitleTable">
         <h1
           className="selectedTable"
