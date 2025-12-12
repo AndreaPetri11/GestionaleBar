@@ -1,4 +1,4 @@
-//src\components\Buttons\increase_decrease_qnty
+//src\components\Buttons\increase_decrease_qnty\IncreaseDecrease.jsx
 
 export const handleIncreaseQty = (id, setTableProducts) => {
   setTableProducts((prev) =>

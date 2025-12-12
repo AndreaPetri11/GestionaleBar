@@ -1,4 +1,5 @@
-// src/components/CustomProduct/CustomProduct.jsx
+//src\components\CustomProduct\CustomProduct.jsx
+
 import { useState } from "react";
 import "./CustomProduct.css"; // puoi creare questo file per lo stile del modal
 

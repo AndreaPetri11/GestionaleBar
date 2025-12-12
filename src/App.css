@@ -1,3 +1,5 @@
+/*src\App.css*/
+
 .containerTables {
   display: flex;
   justify-content: center;
@@ -6,4 +8,14 @@
   row-gap: 10px;
   flex-wrap: wrap;
   margin-top: 20px;
+}
+
+.mainLayout {
+  display: flex;
+  width: 100%;
+}
+
+.tableSidePanel {
+  flex: 1;
+  border-left: 2px solid #ddd;
 }

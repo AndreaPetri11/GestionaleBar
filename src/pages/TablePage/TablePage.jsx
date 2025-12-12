@@ -1,4 +1,4 @@
-// src/pages/TablePage/TablePage.jsx
+// src\pages\TablePage\TablePage.jsx
 
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";

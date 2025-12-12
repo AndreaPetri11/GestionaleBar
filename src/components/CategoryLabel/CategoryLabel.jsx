@@ -1,4 +1,5 @@
-//src\components\categoriesLabel\CategoryLabel.jsx
+//src\components\CategoryLabel\CategoryLabel.jsx
+
 import "./CategoryLabel.css";
 
 export default function CategoryLabel({ categoryName, onClick }) {

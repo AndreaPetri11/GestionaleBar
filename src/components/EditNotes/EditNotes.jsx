@@ -1,4 +1,5 @@
-// src/components/EditNotes/EditNotes.jsx
+//src\components\EditNotes\EditNotes.jsx
+
 import { useState } from "react";
 import "./EditNotes.css";
 

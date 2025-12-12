@@ -1,4 +1,4 @@
-// src/components/TableProductsList/TableProductsList.jsx
+// src\components\TableProductsList\TableProductsList.jsx
 
 import EditNotes from "../EditNotes/EditNotes";
 import { useState } from "react";
@@ -13,6 +13,7 @@ export default function TableProductsList({
   setTableProducts,
   onTableClick,
   tableNotes,
+  goToFullPage,
 }) {
   const [editingProduct, setEditingProduct] = useState(null);
   const navigate = useNavigate();
@@ -103,6 +104,11 @@ export default function TableProductsList({
         >
           Salva
         </button>
+
+        <button className="edit" onClick={goToFullPage}>
+          Modifica
+        </button>
+
         <h4>Totale conto:</h4>
         <p>{total.toFixed(2)}€</p>
       </div>
