@@ -2,52 +2,61 @@
 
 .containerTablePage {
   display: flex;
-  gap: 0.5rem;
+  gap: 1rem;
   padding: 1rem;
   height: 100vh;
   overflow: hidden;
+  position: relative;
+  background: #f9f9f9;
 }
 
 .categorySection {
   flex-basis: 200px;
   flex-shrink: 0;
-  border: 2px solid rgb(14, 194, 17);
+  border: 2px solid #0ec211;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  padding: 0.5rem;
+  padding: 0.6rem;
   overflow-y: auto;
+  background: white;
 }
 
 .tableSection {
-  flex-basis: 350px;
-  flex-shrink: 0;
+  flex: 1;
   border: 2px solid purple;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  position: relative;
+  background: white;
 }
+
 .goBack {
   position: absolute;
-  right: 2px;
-  top: 2px;
+  top: 20px;
+  right: 22px;
   z-index: 20;
   padding: 5px;
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   background-color: red;
   color: white;
-  border-radius: 20%;
-  margin: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .goBack:hover {
   transform: scale(1.1);
   background: #720101;
 }
 .goBack:active {
-  transform: scale(0.65);
+  transform: scale(0.95);
   background: #f45d5d;
 }
 
@@ -56,11 +65,18 @@
   background: white;
   position: sticky;
   top: 0;
-  display: inline;
+  display: block;
+  border-bottom: 1px solid #ccc;
+  z-index: 10;
 }
-.containerTitleTable {
-  border-bottom: 1px solid black;
-  padding: 10px;
+
+h1.selectedTable {
+  color: purple;
+  font-family: "Cinzel", serif;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 20px;
 }
 
 .tableProductsWrapper {
@@ -72,71 +88,73 @@
   display: flex;
   font-weight: bold;
   padding: 0.5rem 1rem;
-  background: white;
+  background: #f0f0f0;
   position: sticky;
   top: 0;
   border-bottom: 1px solid black;
   z-index: 10;
+  align-items: center;
 }
 
 .col-product {
-  flex: 1;
+  flex: 2;
 }
 
 .col-qty {
-  flex: 1.5;
+  flex: 1;
   text-align: center;
 }
 
 .col-price {
-  width: 80px;
+  flex: 1;
   text-align: right;
   padding-right: 10px;
 }
 
 .tableTotal {
+  padding: 10px;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  padding-top: 10px;
-  padding-right: 10px;
-  padding-bottom: 10px;
-  border-top: 1px solid black;
+  justify-content: flex-end;
+  font-size: 1.5rem;
+  align-items: center;
+  color: purple;
+  font-family: "Cinzel", serif;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  border-top: 1px solid #ccc;
 }
 
 .addedProducts {
   display: flex;
-  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
-  padding: 5px 0;
-  padding-left: 10px;
-  border-bottom: 1px solid black;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
 }
 
 .qty-btn {
   width: 32px;
   height: 32px;
-  border-radius: 8px;
+  border-radius: 6px;
   border: none;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   cursor: pointer;
-  margin: 0 6px;
-  transition: all 0.2s ease;
+  margin: 0 4px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: purple;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
   color: white;
+  transition: all 0.2s ease;
 }
-
 .qty-btn:hover {
   background: rgb(213, 147, 213);
   transform: scale(1.1);
   color: purple;
 }
-
 .qty-btn:active {
   transform: scale(0.95);
   background: #dcdce0;
@@ -145,8 +163,8 @@
 .col-qty {
   display: flex;
   align-items: center;
-  gap: 8px;
   justify-content: center;
-  font-size: 18px;
+  gap: 8px;
+  font-size: 16px;
   font-weight: 600;
 }

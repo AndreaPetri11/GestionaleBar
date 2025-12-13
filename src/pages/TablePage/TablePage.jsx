@@ -110,11 +110,7 @@ export default function TablePage() {
         />
       )}
 
-      <button
-        className="goBack"
-        onClick={() => navigate("/")}
-        style={{ position: "absolute", top: 5, right: 5 }}
-      >
+      <button className="goBack" onClick={() => navigate("/")}>
         X
       </button>
     </main>

@@ -113,21 +113,29 @@ export default function TableProductsList({
       </div>
 
       <div className="tableTotal">
-        <button className="table-action-btn trash" onClick={handleClearTable}>
-          Libera tavolo
-        </button>
+        <div className="topRow">
+          <button className="table-action-btn split" onClick={openSplit}>
+            Dividi conto
+          </button>
+          <div className="totalAmount">Totale conto: €{total.toFixed(2)}</div>
+        </div>
 
-        <button className="table-action-btn save" onClick={handleSaveAndGoBack}>
-          Salva
-        </button>
+        <div className="bottomRow">
+          <button className="table-action-btn trash" onClick={handleClearTable}>
+            Libera tavolo
+          </button>
 
-        <button className="table-action-btn edit" onClick={goToFullPage}>
-          Modifica
-        </button>
+          <button className="table-action-btn edit" onClick={goToFullPage}>
+            Modifica
+          </button>
 
-        <button className="table-action-btn split" onClick={openSplit}>
-          Dividi conto
-        </button>
+          <button
+            className="table-action-btn save"
+            onClick={handleSaveAndGoBack}
+          >
+            Salva
+          </button>
+        </div>
 
         {showSplit && (
           <div className="splitBillBox">
@@ -154,9 +162,6 @@ export default function TableProductsList({
             </button>
           </div>
         )}
-
-        <h4>Totale conto:</h4>
-        <p>{total.toFixed(2)} €</p>
       </div>
 
       {editingProduct && (

@@ -9,11 +9,16 @@
 .descriptionTable {
   display: flex;
   font-weight: bold;
-  padding: 5px 10px;
+  /*padding: 5px 10px;*/
   background: #f1f1f1;
   position: sticky;
   top: 0;
   z-index: 10;
+  color: purple;
+  font-family: "Cinzel", serif;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  font-size: medium;
 }
 
 .col-product {
@@ -28,7 +33,11 @@
 .col-price {
   width: 80px;
   text-align: right;
-  padding-right: 10px;
+  padding-right: 5px;
+}
+
+h3.col-price {
+  padding-left: 10px;
 }
 
 .addedProducts {
@@ -65,17 +74,43 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  font-size: x-large;
+  color: purple;
+  font-family: "Cinzel", serif;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+
+.tableTotal .topRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.tableTotal .totalAmount {
+  font-size: 1rem;
+  padding: 15px;
+}
+
+.tableTotal .bottomRow {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
 .table-action-btn {
-  padding: 8px 14px;
+  padding: 6px 10px;
+  font-size: 20px;
+  width: auto;
+  min-width: 80px;
+  border-radius: 8px;
   border: none;
-  border-radius: 10px;
-  font-size: 14px;
   font-weight: bold;
   cursor: pointer;
   color: white;
   margin-bottom: 5px;
+  flex-shrink: 0;
 }
 
 .table-action-btn.save {

@@ -42,29 +42,10 @@ function App() {
   return (
     <>
       <header>
-        <h1>BAR</h1>
+        <h1 className="barName">RistoruM</h1>
       </header>
 
       <main className="mainLayout">
-        {/*<div className="containerTables">
-          {tablesState.map((table) => {
-            const status =
-              selectedTableId === table.id
-                ? "selected"
-                : table.products?.length > 0
-                ? "occupied"
-                : "empty";
-
-            return (
-              <Table
-                key={table.id}
-                id={table.id}
-                onClick={() => handleTableClick(table.id)}
-                status={status}
-              />
-            );
-          })}
-        </div>*/}
         <div className="containerTables">
           {tableLayout.flat().map((tableId, index) => {
             if (!tableId) return <div key={index} />;
