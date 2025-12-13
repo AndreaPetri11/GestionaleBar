@@ -1,4 +1,5 @@
-//src\components\TableProductsList\TableProductsList.jsx
+// src/components/TableProductsList/TableProductsList.jsx
+
 import EditNotes from "../EditNotes/EditNotes";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -17,7 +18,14 @@ export default function TableProductsList({
   setTableNotes, // necessario per liberare tavolo e reset note
 }) {
   const [editingProduct, setEditingProduct] = useState(null);
+
+  // 🔹 Stato per "Dividi conto"
+  const [showSplit, setShowSplit] = useState(false);
+  const [people, setPeople] = useState(1);
+
   const navigate = useNavigate();
+
+  const quota = people > 0 ? (total / people).toFixed(2) : "0.00";
 
   const handleSaveNotes = (updatedProduct) => {
     setTableProducts(
@@ -38,7 +46,12 @@ export default function TableProductsList({
       `table-${tableId}`,
       JSON.stringify({ products: tableProducts, notes: tableNotes })
     );
-    navigate("/"); // torna alla pagina principale con tavoli
+    navigate("/");
+  };
+
+  const openSplit = () => {
+    setPeople(1);
+    setShowSplit(true);
   };
 
   return (
@@ -112,8 +125,38 @@ export default function TableProductsList({
           Modifica
         </button>
 
+        <button className="table-action-btn split" onClick={openSplit}>
+          Dividi conto
+        </button>
+
+        {showSplit && (
+          <div className="splitBillBox">
+            <label>
+              Numero paganti
+              <input
+                type="number"
+                min="1"
+                value={people}
+                onChange={(e) => setPeople(Number(e.target.value))}
+              />
+            </label>
+
+            <div className="splitResult">
+              Quota per persona:
+              <strong> € {quota}</strong>
+            </div>
+
+            <button
+              className="table-action-btn close"
+              onClick={() => setShowSplit(false)}
+            >
+              Chiudi
+            </button>
+          </div>
+        )}
+
         <h4>Totale conto:</h4>
-        <p>{total.toFixed(2)}€</p>
+        <p>{total.toFixed(2)} €</p>
       </div>
 
       {editingProduct && (

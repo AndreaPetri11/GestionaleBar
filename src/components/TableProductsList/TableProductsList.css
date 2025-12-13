@@ -90,7 +90,36 @@
   background: #e53935;
 }
 
+.table-action-btn.split {
+  background: blue;
+}
+
 .table-action-btn:hover {
   opacity: 0.8;
   transform: scale(1.05);
+}
+
+.table-action-btn.close {
+  background: #e53935;
+  margin-top: 20px;
+}
+
+.splitBillBox {
+  margin-top: 10px;
+  padding: 20px;
+  border-radius: 8px;
+  background: blue;
+  font-size: 14px;
+  color: white;
+}
+
+.splitBillBox input {
+  width: 100%;
+  padding: 6px;
+  margin-top: 4px;
+}
+
+.splitResult {
+  margin-top: 8px;
+  font-size: large;
 }
