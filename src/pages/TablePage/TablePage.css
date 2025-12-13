@@ -96,8 +96,8 @@
 
 .tableTotal {
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
+  flex-direction: row;
+  justify-content: flex-start;
   padding-top: 10px;
   padding-right: 10px;
   padding-bottom: 10px;
