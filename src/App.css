@@ -8,11 +8,13 @@
 }
 
 .containerTables {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(8, 90px);
+  grid-template-rows: repeat(3, 90px);
+  gap: 14px;
+
   width: 70%;
-  height: 90%;
+  padding: 20px;
 }
 
 .tablePreview {

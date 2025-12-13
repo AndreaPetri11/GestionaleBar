@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import TableProductsList from "./components/TableProductsList/TableProductsList";
 import useTableProducts from "./hooks/useTableProducts";
+import { tableLayout } from "./data/tableLayout";
 
 function App() {
   const navigate = useNavigate();
@@ -45,7 +46,7 @@ function App() {
       </header>
 
       <main className="mainLayout">
-        <div className="containerTables">
+        {/*<div className="containerTables">
           {tablesState.map((table) => {
             const status =
               selectedTableId === table.id
@@ -60,6 +61,29 @@ function App() {
                 id={table.id}
                 onClick={() => handleTableClick(table.id)}
                 status={status}
+              />
+            );
+          })}
+        </div>*/}
+        <div className="containerTables">
+          {tableLayout.flat().map((tableId, index) => {
+            if (!tableId) return <div key={index} />;
+
+            const table = tablesState.find((t) => t.id === tableId);
+
+            const status =
+              selectedTableId === tableId
+                ? "selected"
+                : table?.products?.length > 0
+                ? "occupied"
+                : "empty";
+
+            return (
+              <Table
+                key={tableId}
+                id={tableId}
+                status={status}
+                onClick={() => handleTableClick(tableId)}
               />
             );
           })}
