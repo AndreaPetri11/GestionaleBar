@@ -158,3 +158,41 @@ h3.col-price {
   margin-top: 8px;
   font-size: large;
 }
+
+.confirmModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.confirmBox {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  min-width: 300px;
+}
+
+.confirmButtons {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-around;
+  color: white;
+}
+
+.confirmButtons .table-action-btn {
+  min-width: 80px;
+  color: white;
+  background-color: red;
+}
+
+.table-action-btn.yes {
+  background-color: green;
+}
