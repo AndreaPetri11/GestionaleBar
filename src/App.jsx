@@ -42,7 +42,7 @@ function App() {
   return (
     <>
       <header>
-        <h1 className="barName">RistoruM</h1>
+        <h1 className="barName">Gestionale Bar</h1>
       </header>
 
       <main className="mainLayout">
