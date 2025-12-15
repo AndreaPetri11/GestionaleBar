@@ -11,17 +11,33 @@ header {
   display: inline-block;
 }
 
-.containerTables {
+/*.containerTables {
   display: grid;
   grid-template-columns: repeat(8, 90px);
   grid-template-rows: repeat(3, 90px);
   gap: 14px;
-
   width: 70%;
   padding: 20px;
+}*/
+
+/* TABLET (default) */
+.containerTables {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  width: 100%;
 }
 
-.tablePreview {
+/* DESKTOP */
+@media (min-width: 1200px) {
+  .containerTables {
+    grid-template-columns: repeat(8, 90px);
+    width: 70%;
+  }
+}
+/**/
+
+/*.tablePreview {
   flex-basis: 30%;
   border-radius: 12px;
   display: flex;
@@ -31,7 +47,23 @@ header {
   width: 100px;
   height: 520px;
   margin: -70px 0 0 0;
+}*/
+
+/**/
+.tablePreview {
+  width: 100%;
+  max-height: 60vh;
+  overflow-y: auto;
 }
+
+/* Desktop */
+@media (min-width: 1200px) {
+  .tablePreview {
+    width: 30%;
+    height: 520px;
+  }
+}
+/**/
 
 .barName {
   display: inline-block;
@@ -43,4 +75,21 @@ header {
   margin-left: 40px;
   font-size: 60px;
   text-shadow: 0px 0px 15px rgb(180, 7, 223);
+}
+
+/**/
+@media (max-width: 768px) {
+  .mainLayout {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .tablePreview {
+    display: none;
+  }
+
+  .barName {
+    font-size: 32px;
+    margin-left: 10px;
+  }
 }

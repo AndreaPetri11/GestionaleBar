@@ -6,7 +6,7 @@ const categories = [
   { id: "C", categoryName: "Cocktails" },
   { id: "VC", categoryName: "Vini al Calice" },
   { id: "CV", categoryName: "Cantina Vini" },
-  { id: "AD", categoryName: "Amari/Distillati" },
+  { id: "AD", categoryName: "Amari / Distillati" },
   { id: "CFF", categoryName: "Caffetteria" },
   { id: "AL", categoryName: "Altro" },
 ];

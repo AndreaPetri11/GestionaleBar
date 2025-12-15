@@ -203,3 +203,21 @@ h3.col-price {
 .table-action-btn.yes {
   background-color: green;
 }
+
+/**/
+@media (max-width: 768px) {
+  .addedProducts {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .col-price {
+    align-self: flex-end;
+  }
+
+  .tableTotal {
+    font-size: 1.1rem;
+  }
+}
+/**/

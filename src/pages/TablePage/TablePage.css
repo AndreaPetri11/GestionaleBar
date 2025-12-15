@@ -1,6 +1,6 @@
 /*src\pages\TablePage\TablePage.css*/
 
-.containerTablePage {
+/*.containerTablePage {
   display: flex;
   gap: 1rem;
   padding: 1rem;
@@ -11,7 +11,15 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}*/
+
+/**/
+.containerTablePage {
+  display: flex;
+  gap: 1rem;
+  height: 100%;
 }
+/**/
 
 .categorySection {
   flex-basis: 200px;
@@ -172,3 +180,22 @@ h1.selectedTable {
   font-size: 16px;
   font-weight: 600;
 }
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .containerTablePage {
+    flex-direction: column;
+  }
+
+  .categorySection {
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 10px;
+  }
+
+  .categoryLabel {
+    min-width: 120px;
+    white-space: wrap;
+  }
+}
+/**/
