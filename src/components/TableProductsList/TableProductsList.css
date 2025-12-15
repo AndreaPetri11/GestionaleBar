@@ -139,6 +139,13 @@ h3.col-price {
   margin-top: 20px;
 }
 
+.table-action-btn:active {
+  background-color: white;
+  color: purple;
+  border-color: purple;
+  transform: scale(0.5);
+}
+
 .splitBillBox {
   margin-top: 10px;
   padding: 20px;

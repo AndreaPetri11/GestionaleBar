@@ -5,7 +5,7 @@ import "./ProductsSection.css";
 export default function ProductsSection({ products, onAddProduct }) {
   return (
     <section className="productsSection">
-      <h1>Prodotti</h1>
+      <h1 className="productsSectionTitle">Prodotti</h1>
       <div>
         {products && products.length > 0 ? (
           <ul className="productList">

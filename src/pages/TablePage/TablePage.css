@@ -7,31 +7,35 @@
   height: 100vh;
   overflow: hidden;
   position: relative;
-  background: #f9f9f9;
+  background-image: url("../../assets/wallpaper.png");
+  background-size: cover; /* l’immagine copre tutto lo schermo */
+  background-position: center; /* centrata */
+  background-repeat: no-repeat;
 }
 
 .categorySection {
   flex-basis: 200px;
   flex-shrink: 0;
-  border: 2px solid #0ec211;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   padding: 0.6rem;
   overflow-y: auto;
-  background: white;
+  background: none;
 }
 
 .tableSection {
   flex: 1;
-  border: 2px solid purple;
+  border: 10px solid purple;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
   position: relative;
-  background: white;
+  background: #fafafa;
+  font-weight: bolder;
+  font-size: 25px;
 }
 
 .goBack {

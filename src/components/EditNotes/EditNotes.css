@@ -45,3 +45,10 @@
   background-color: #f44336;
   color: #fff;
 }
+
+.editNotesButtons button:active {
+  background-color: white;
+  color: purple;
+  border-color: purple;
+  transform: scale(0.5);
+}
