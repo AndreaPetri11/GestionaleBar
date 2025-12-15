@@ -64,3 +64,10 @@
   background-color: #f44336;
   color: #fff;
 }
+
+.customProductButtons button:active {
+  background-color: white;
+  color: purple;
+  border-color: purple;
+  transform: scale(0.5);
+}

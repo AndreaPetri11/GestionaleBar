@@ -23,11 +23,11 @@
 }
 
 .table.occupied {
-  background: #ffeb3b; /* giallo chiaro */
+  background: #ffeb3b;
   color: black;
 }
 
 .table.selected {
-  background: #2196f3; /* blu */
+  background: #2196f3;
   color: white;
 }
