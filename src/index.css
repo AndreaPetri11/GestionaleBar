@@ -9,12 +9,14 @@
 html,
 body,
 #root {
-  margin: 0;
-  padding: 0;
-  width: 100vw;
+  width: 100%;
   height: 100%;
+}
+
+body {
   background-image: url("./assets/wallpaper.png");
-  background-size: cover; /* l’immagine copre tutto lo schermo */
-  background-position: center; /* centrata */
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
+  overflow-x: hidden;
 }
