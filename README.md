@@ -8,6 +8,8 @@ L’interfaccia è progettata per essere **touch-friendly**, chiara e immediata,
 
 ---
 
+## Link: https://gestionale-bar.vercel.app/
+
 ## 🎯 Obiettivi:
 
 - Visualizzare tutti i tavoli del locale in un’unica schermata
