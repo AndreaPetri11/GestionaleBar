@@ -18,6 +18,7 @@
   padding: 0.6rem;
   overflow-y: auto;
   background: none;
+  transform: scale(0.9);
 }
 
 .tableSection {
