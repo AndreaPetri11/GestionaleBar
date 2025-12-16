@@ -1,13 +1,14 @@
 /*src\App.css*/
-@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap");
 
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap");
 
 .mainLayout {
+  min-height: 100vh; /* riempie sempre il viewport */
   display: flex;
   gap: 10px;
   padding: 20px;
   align-items: stretch;
+  flex-direction: column; /* utile per mobile */
 }
 
 header {
