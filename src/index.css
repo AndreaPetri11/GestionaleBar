@@ -7,12 +7,12 @@
 }
 
 html,
-body {
+body,
+#root {
   margin: 0;
   padding: 0;
   width: 100vw;
-  /*height: 100vh;
-  overflow: hidden;*/
+  height: 100%;
   background-image: url("./assets/wallpaper.png");
   background-size: cover; /* l’immagine copre tutto lo schermo */
   background-position: center; /* centrata */

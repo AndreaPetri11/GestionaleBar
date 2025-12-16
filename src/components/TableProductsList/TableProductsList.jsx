@@ -90,7 +90,10 @@ export default function TableProductsList({
                   onClick={() => setEditingProduct(item)}
                   style={{ cursor: "pointer" }}
                 >
-                  {item.productName} {item.notes && `(${item.notes})`}
+                  {item.productName}
+                  {item.notes && (
+                    <span className="product-notes"> ({item.notes})</span>
+                  )}
                 </span>
 
                 <span className="col-qty">
