@@ -133,7 +133,7 @@ Il Gestionale utilizza un **Local Storage**.
 
 ## 🚀 Possibili Estensioni Future:
 
-- Fix sistema responsive emiglioramenti visivi
+- Fix sistema responsive e miglioramenti visivi
 - Possibilità di spuntare il prodotto come "pagato" così che il prodotto resti nel tavolo **sbarrato ma leggibile** e che l'importo relativo
   venga aggiornato in tempo reale **il tutto per semplificare la gestione dei pagamenti se venissero effettuati in momenti diversi**
 - Storico ordini per tavolo
